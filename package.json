@@ -1,0 +1,75 @@
+{
+  "name": "@uni-helper/plugin-uni",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.11.1",
+  "description": "uni-app plugin 的 ESM 导出",
+  "author": "FliPPeDround <flippedround@qq.com>",
+  "license": "MIT",
+  "funding": "https://afdian.com/a/flippedround",
+  "homepage": "https://github.com/uni-helper/plugin-uni#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uni-helper/plugin-uni.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uni-helper/plugin-uni/issues"
+  },
+  "keywords": [
+    "uni-app",
+    "uni-helper",
+    "vite",
+    "vite-plugin",
+    "ESM"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "type": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "require": "./src/index.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "src/index.cjs",
+  "module": "src/index.js",
+  "types": "src/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./*"
+      ]
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "play": "cd playground && pnpm dev",
+    "release": "bumpp",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepare": "simple-git-hooks"
+  },
+  "peerDependencies": {
+    "@dcloudio/vite-plugin-uni": "*",
+    "vite": ">=2"
+  },
+  "peerDependenciesMeta": {
+    "@dcloudio/vite-plugin-uni": { "optional": false },
+    "vite": { "optional": false }
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
+    "bumpp": "^10.2.0",
+    "eslint": "^9.31.0",
+    "lint-staged": "^16.1.2",
+    "simple-git-hooks": "^2.13.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
