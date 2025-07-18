@@ -62,7 +62,7 @@ export default defineConfig({
 2. 通过 peerDependencies 复用用户项目中的 @dcloudio/vite-plugin-uni，确保版本由用户掌控。
 3. 手动导出`d.ts`文件，确保类型与官方插件一致。
 
-## 🙇🏻‍♂️ [sponsors](https://afdian.com/a/flippedround)
+## 🙇🏻‍♂️ [赞助](https://afdian.com/a/flippedround)
 
 <p align="center">
   <a href="https://afdian.com/a/flippedround">
