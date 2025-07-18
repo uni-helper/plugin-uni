@@ -56,12 +56,11 @@ export default defineConfig({
   ]
 })
 ```
-> 不再需要 Uni.default() 或 @ts-expect-error！
 
 ## ⚙️ 工作原理
-1. 本包仅做 ESM 重导出，不携带任何运行时逻辑。
+1. 本包仅做 ESM 重导出[CJS→ESM 兼容性语法糖](https://nodejs.org/api/esm.html#interoperability-with-commonjs)，不携带任何运行时逻辑。
 2. 通过 peerDependencies 复用用户项目中的 @dcloudio/vite-plugin-uni，确保版本由用户掌控。
-3. 手动实现`d.ts`文件，确保类型与官方插件一致。
+3. 手动导出`d.ts`文件，确保类型与官方插件一致。
 
 ## 🙇🏻‍♂️ [sponsors](https://afdian.com/a/flippedround)
 
