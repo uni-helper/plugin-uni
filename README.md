@@ -1,5 +1,5 @@
-# plugin-uni
-> 为 uni-app 提供的 原生 ESM Vite 插件，让你在 Vite 3/4/5 的 ESM-First 环境中零成本接入 uni-app 构建体系。
+# @uni-helper/plugin-uni
+> 为 uni-app 提供的 原生 ESM Vite 插件，让你在 ESM-First 环境中零成本接入 uni-app 构建体系。
 
 > [!TIP]
 > - 零运行时影响
