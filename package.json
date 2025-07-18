@@ -52,12 +52,10 @@
     "prepare": "simple-git-hooks"
   },
   "peerDependencies": {
-    "@dcloudio/vite-plugin-uni": "*",
-    "vite": ">=2"
+    "@dcloudio/vite-plugin-uni": "*"
   },
   "peerDependenciesMeta": {
-    "@dcloudio/vite-plugin-uni": { "optional": false },
-    "vite": { "optional": false }
+    "@dcloudio/vite-plugin-uni": { "optional": false }
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.17.0",
