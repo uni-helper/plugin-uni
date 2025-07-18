@@ -3,17 +3,17 @@
 
 > [!TIP]
 > - 零运行时影响
-> 
+>
 >   本包仅为 ESM 重导出，无额外逻辑，因此不会增加构建耗时或引入潜在缺陷。
->   
+>
 > - 问题归属
-> 
+>
 >   如遇构建异常，请先确认是否由官方插件引起，并向 [dcloudio/uni-app](https://github.com/dcloudio/uni-app/issues) 提交 issue；
->   
+>
 >   若可定位为转发层缺陷，请附最小复现仓库至 [@uni-helper/plugin-uni](https://github.com/uni-helper/plugin-uni)。
->   
+>
 > - 维护计划
->   
+>
 >   将持续跟进官方 ESM 支持进度；一旦官方提供原生 ESM 版本，本项目将归档并停止维护。
 
 ## ✨ 亮点
