@@ -28,11 +28,11 @@
 ## 📦 安装
 
 ```shell
-# 确保你已安装官方插件
-npm i -D @dcloudio/vite-plugin-uni
-# 安装 ESM 转发包
 npm i -D @uni-helper/plugin-uni
 ```
+
+> [!IMPORTANT]
+> 请确保已安装官方插件 `@dcloudio/vite-plugin-uni`，否则本插件将无法正常工作。
 
 ## 🔧 使用
 ```json
