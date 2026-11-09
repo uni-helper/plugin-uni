@@ -1,32 +1,54 @@
-name: Lint
+name: CI
 
 on:
   push:
     branches:
       - main
-    tags-ignore:
-      - '**'
+
   pull_request:
     branches:
       - main
 
+  merge_group: {}
+
+permissions:
+  contents: read
+
 jobs:
-  lint:
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node_version: [22, 24, 26]
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+
     steps:
+      - name: Set git to use LF
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
+
       - uses: actions/checkout@v7
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Set node
-        uses: actions/setup-node@v7
         with:
-          node-version-file: .node-version
-          cache: pnpm
+          fetch-depth: 0
 
-      - name: Install
-        run: pnpm i --frozen-lockfile
+      - name: Setup pnpm and Node.js
+        uses: pnpm/setup@v3
+        with:
+          cache: true
+          require-lockfile: true
+          runtime: node@${{ matrix.node_version }}
 
-      - name: ESLint
-        run: pnpm lint
+      - name: Build
+        run: pnpm run build
+
+      - name: Build mp-weixin
+        run: pnpm run build:mp-weixin
+
+      - name: Build h5
+        run: pnpm run build:h5
+
+      - name: Lint
+        run: pnpm run lint

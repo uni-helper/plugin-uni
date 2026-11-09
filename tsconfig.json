@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "baseUrl": ".",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "types": ["@types/node"],
     "strict": true,
+    "strictNullChecks": true,
     "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
     "skipLibCheck": true
   },
-  "include": [
-    "**/*.ts"
-  ]
+  "include": ["src"]
 }
